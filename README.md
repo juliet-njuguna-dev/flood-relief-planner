@@ -62,4 +62,4 @@ One truck, one road network, no uncertainty or live data, and a simple heuristic
 
 ## Credits
 
-Group project by Njuguna Juliet, Mark Collins, Ouma Rose Achieng and Keith Walter Odeny (CPP 4103, KCA University). The planner, scenarios, tests, dashboard and documentation are the group's work. The portable server setup, the averaged timing in `server.lisp` and the README were prepared with help from Claude (Anthropic).
+Project by Njuguna Juliet and Mark Collins (CPP 4103, KCA University). The planner, scenarios, tests and dashboard are our work. The portable server setup, the averaged timing in server.lisp and the README were prepared with help from Claude (Anthropic).
