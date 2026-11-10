@@ -1,0 +1,6 @@
+# Compiled Lisp
+*.fasl
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Relief Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <span class="brand-icon">FR</span>
+            <div>
+                <h1>Flood Relief Planner</h1>
+                <p>AI Logistics Management System</p>
+            </div>
+        </div>
+        <span class="status">● System Ready</span>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">PLANNING DASHBOARD</p>
+                <h2>Relief Operations</h2>
+                <p>Select a scenario and algorithm to generate a delivery plan.</p>
+            </div>
+        </section>
+
+        <section class="control-panel">
+            <h3>Configure Planning Run</h3>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="scenario">Select Scenario</label>
+                    <select id="scenario">
+                        <option value="1">Scenario 1 - Basic Delivery</option>
+                        <option value="2">Scenario 2 - Three Villages</option>
+                        <option value="3">Scenario 3 - Flooded Road</option>
+                        <option value="4">Scenario 4 - Multiple Deliveries</option>
+                        <option value="5">Scenario 5 - Unreachable Village</option>
+                        <option value="6">Scenario 6 - Weighted Road Distances</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="algorithm">Select Algorithm</label>
+                    <select id="algorithm">
+                        <option value="bfs">Breadth-First Search (BFS)</option>
+                        <option value="astar">A* Search</option>
+                        <option value="both">Compare Both Algorithms</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button id="run-button" class="primary-button">
+                Run Planner
+            </button>
+        </section>
+
+    
+        <section class="results-section">
+
+            <div class="section-heading">
+                <h3>Planning Results</h3>
+                <span id="result-status">Awaiting execution</span>
+            </div>
+
+            <div id="results-container" class="results-grid">
+
+                <!-- BFS Results -->
+                <div class="result-card" id="bfs-card">
+                    <h3>Breadth-First Search (BFS)</h3>
+                    <span id="bfs-status">Not executed</span>
+
+                    <div class="stats-grid">
+
+                        <div class="stat-card">
+                            <p>Plan Length</p>
+                            <h2 id="bfs-length">--</h2>
+                        </div>
+
+                        <div class="stat-card">
+                            <p>Total Plan Cost</p>
+                            <h2 id="bfs-cost">--</h2>
+                        </div>
+
+                        <div class="stat-card">
+                            <p>Expanded Nodes</p>
+                            <h2 id="bfs-expanded">--</h2>
+                        </div>
+
+                        <div class="stat-card">
+                            <p>Generated Nodes</p>
+                            <h2 id="bfs-generated">--</h2>
+                        </div>
+
+                        <div class="stat-card">
+                            <p>Execution Time</p>
+                            <h2 id="bfs-time">--</h2>
+                        </div>
+
+                    </div>
+
+                    <h4>Delivery Plan</h4>
+
+                    <div id="bfs-plan" class="plan-output">
+                        <p>BFS results will appear here.</p>
+                    </div>
+                </div>
+
+                <!-- A* Results -->
+                <div class="result-card" id="astar-card">
+                    <h3>A* Search</h3>
+                    <span id="astar-status">Not executed</span>
+
+                    <div class="stats-grid">
+
+                        <div class="stat-card">
+                            <p>Plan Length</p>
+                            <h2 id="astar-length">--</h2>
+                        </div>
+                        <div class="stat-card">
+                            <p>Total Plan Cost</p>
+                            <h2 id="astar-cost">--</h2>
+                        </div>
+
+                        <div class="stat-card">
+                            <p>Expanded Nodes</p>
+                            <h2 id="astar-expanded">--</h2>
+                        </div>
+
+                        <div class="stat-card">
+                            <p>Generated Nodes</p>
+                            <h2 id="astar-generated">--</h2>
+                        </div>
+
+                        <div class="stat-card">
+                            <p>Execution Time</p>
+                            <h2 id="astar-time">--</h2>
+                        </div>
+
+                    </div>
+
+                    <h4>Delivery Plan</h4>
+
+                    <div id="astar-plan" class="plan-output">
+                        <p>A* results will appear here.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            
+            <div id="comparison-panel" class="comparison-panel" style="display: none;">
+
+                <h3>Algorithm Performance Comparison</h3>
+
+                <div class="comparison-stats">
+
+                    <div class="stat-card">
+                        <p>Fewer Expanded Nodes</p>
+                        <h2 id="node-winner">--</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Faster Execution</p>
+                        <h2 id="time-winner">--</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Plan Length Comparison</p>
+                        <h2 id="plan-comparison">--</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Lower Total Cost</p>
+                        <h2 id="cost-winner">--</h2>
+                    </div>
+
+                </div>
+
+                <p id="comparison-summary">
+                    Run both algorithms to compare their performance.
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Flood Relief Planner | Common Lisp AI Planning Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
